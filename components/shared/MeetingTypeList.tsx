@@ -1,5 +1,4 @@
 'use client'
-import Image from 'next/image'
 import React, { useState } from 'react'
 import HomeCard from './HomeCard'
 import { useRouter } from 'next/navigation'
@@ -58,6 +57,8 @@ const createMeeting = async() => {
       toast({
         title:"Meeting created"
       })
+      setValues(values)//placeholders
+      console.log(callDetails)
 
     }catch(error){
       console.error(error);
