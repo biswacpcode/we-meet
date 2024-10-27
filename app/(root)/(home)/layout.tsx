@@ -1,6 +1,16 @@
 import Navbar from '@/components/shared/Navbar'
 import Sidebar from '@/components/shared/Sidebar'
+import { Metadata } from 'next';
 import React, { ReactNode } from 'react'
+
+export const metadata: Metadata = {
+  title: "We Meet",
+  description: "Just for US",
+  icons:{
+    icon: '/icons/logo.svg'
+  }
+};
+
 
 const HomeLayout = ({children} : {children: ReactNode}) => {
   return (
