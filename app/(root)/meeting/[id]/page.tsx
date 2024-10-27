@@ -1,3 +1,3 @@
-export default function Meeting({ params }: { params: { id: string } }) {
-  return <div>My Post: {params.id}</div>;
+export default function Component({ params }: { params: { id: string } }){
+  console.log("page is running well")
 }
