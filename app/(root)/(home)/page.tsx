@@ -2,8 +2,26 @@ import MeetingTypeList from '@/components/shared/MeetingTypeList';
 
 const Home = () => {
     const now = new Date();
-  const date =now.toLocaleDateString('en-IN', {weekday: 'long', month:"long", day:'2-digit', year:"numeric"});
-  const time =now.toLocaleTimeString('en-IN', {hour: '2-digit', minute:'2-digit', }).toUpperCase();
+
+    // Formatter for the date
+    const dateFormatter = new Intl.DateTimeFormat('en-IN', {
+        timeZone: 'Asia/Kolkata', // Replace with your desired time zone
+        weekday: 'long',
+        month: 'long',
+        day: '2-digit',
+        year: 'numeric'
+    });
+    const date = dateFormatter.format(now);
+    
+    // Formatter for the time
+    const timeFormatter = new Intl.DateTimeFormat('en-IN', {
+        timeZone: 'Asia/Kolkata', // Replace with your desired time zone
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true // Use true for AM/PM format, false for 24-hour format
+    });
+    const time = timeFormatter.format(now).toUpperCase();
+
   return (
     <section className='flex size-full flex-col gap-10 text-white'>
       <div className='h-[300px] w-full rounded-[20px] bg-hero bg-cover'>
